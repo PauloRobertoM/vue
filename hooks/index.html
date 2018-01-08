@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vue APP</title>
+		<link rel="stylesheet" type="text/css" href="http://davidtkatz.com/public_css/vue.css">
+		<script type="text/javascript" src="https://unpkg.com/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div class="">
+				Contador: {{count}}
+			</div>
+			<button class="vue-btn" @click="increment">Increment </button>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: '#app',
+				// data: {
+					
+				// },
+				// methods: {
+				// 	alertTime() {
+				// 		alert(`A hora é ${Date.now().toLocaleString()}`)	
+				// 	}
+				// },
+				// created() {
+				// 	this.alertTime()	
+				// },
+				// mounted() {
+				// 	this.alertTime()
+				// }
+				data: {
+					count: 0
+				},
+				methods: {
+					increment() {
+						this.count++
+					}
+				},
+				updated() {
+					console.log('this.count', this.count)
+				}
+			})
+		</script>
+	</body>
+</html>
